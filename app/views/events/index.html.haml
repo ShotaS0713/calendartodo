@@ -1,0 +1,30 @@
+%h1 Listing events
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Details 
+      %th Start date
+      %th End date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.title
+        %td= event.description
+        %td= event.start_date.strftime("%Y/%m/%d %H:%M")
+        %td= event.end_date.strftime("%Y/%m/%d %H:%M")
+        %td.btn= link_to 'Show', event
+        %td.btn= link_to 'Edit', edit_event_path(event)
+        %td.btn= link_to 'Destroy', event, method: :delete, data: { confirm: 'この項目は削除されます' }
+        
+ 
+  
+%br
+
+= link_to 'New Event', new_event_path
+#calendar

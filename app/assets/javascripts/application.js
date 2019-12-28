@@ -24,6 +24,8 @@
 
 
 
+
+
 $(function () {
   // 画面遷移を検知
   $(document).on('turbolinks:load', function () {
@@ -45,51 +47,46 @@ $(function () {
         $('#calendar').fullCalendar({
             events: '/events.json',
             firstDay: 1,
-            // 後で書く
-            // googleCalendarApiKey: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+            
+            eventSources : [
+              {
+                googleCalendarApiKey: 'AIzaSyAwnwl90LWS95BB3OT-HKptuCALoEjWJAk',
+                
+                googleCalendarId: 'ja.japanese#holiday@group.v.calendar.google.com'
+              }
+            ],
+            
+            eventClick: function(item, jsEvent, view) {
+              //クリックしたイベントのタイトルが取れるよ
+              alert('Clicked on: ' + item.title);
+            },
 
-            // JP Holidays
-            // events: 'japanese__ja@holiday.calendar.google.com',
+            header:{
+              left:'prev,next,today',
+              center:'title,eventListButton',
+              right:'month agendaWeek agendaDay'
+            },
+            customButtons:{
+              eventListButton:{
+                  text: 'all events',
+                  click:function(){
+                      alert('!');
+                  }
+              }
+            },
+            eventDrop: function(item, delta,revertFunc,jsEvent,ui, view) {
+              //ドロップした情報
+              alert('Clicked on: ' + item.title);
+              //ドロップしたことを元に戻したいとき
+              revertFunc();
+            }
 
-          
 
 
         });
       
     }
   });
+})
 
-  
-   
-});
-  
-  // $(function() {
-  //   $('#calendar').fullCalendar({
-  //     eventRender: function(events, element){
-  //       if(events.img){
-  //         $(element[0])
-  //         .css("border-color", "transparent")
-  //         .css("background-color", "transparent")
-  //         .html('<img class= "photo" src="'+events.img+'" />');
-  //         }
-  //     },
-  //       events:[
-  //         {
-  //           title: '通常イベント',
-  //           start: new Date(y, m, 15)
-  //         },
-  //         {
-  //           title: '画像　イベント',
-  //           start: new Date(y, m, 1),
-  //           img:"img2.jpg"					
-  //       },
-  //       {
-  //           title: '画像　イベント',
-  //           start: new Date(y, m, 2),
-  //           img:"img3.jpg"					
-  //       }
 
-  //       ]
-      
-  //   });
-  // });

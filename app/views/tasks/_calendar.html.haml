@@ -1,0 +1,6 @@
+.contents.row
+  - @tasks.each do |task|
+    .content_post{style: "background-image: url(#{task.image});"}
+      %p= task.text
+      %span.name
+        = task.name

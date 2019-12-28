@@ -1,10 +1,17 @@
 body {
-  background-color: #fff;
+  background-color: #dcdcdc;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+.fc{
+  background-color: white;
+}
+h2{
+  padding: 10px;
+  font-size: 24px;
 }
 
 p, ol, ul, td {
@@ -96,5 +103,12 @@ label {
   background-color: #f0f0ff;
 }
 .fc-content{
-  background-color: #e0ffff;
+  background-color: #faebd7	;
+  color: black;
+}
+// .fc-button{
+//   background-color: #fff;
+// }
+.fc-left,.fc-right{
+  margin: 10px 10px;
 }

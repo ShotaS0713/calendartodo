@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
 .btn {
   display       : inline-block;
   border-radius : 5%;          /* 角丸       */
@@ -16,7 +19,7 @@
   box-shadow    : 0 4px 2px #666666;  /* 影の設定 */
   border        : 1px solid black;    /* 枠の指定 */
   text-decoration: none;
-  margin-right: 4px;
+  margin-right: 10px;
 }
 .btn:hover {
   box-shadow    : none;        /* カーソル時の影消去 */
@@ -32,5 +35,11 @@
   float: right;
 }
 .footer{
+  text-align: center;
+}
+.fc-button{
+  background-color: #faebd7;
+}
+th{
   text-align: center;
 }

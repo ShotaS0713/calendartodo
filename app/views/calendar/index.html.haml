@@ -1,0 +1,25 @@
+%header
+.all-header
+  %h2 My calendar
+  - if user_signed_in?
+    .user_nav.user_login
+      = link_to "Log out", destroy_user_session_path, method: :delete, class: 'btn new_btn'
+      = link_to 'New Event', new_event_path , class: 'btn new_btn'
+  - else
+    .user_login
+      = link_to "Log in", new_user_session_path, class: 'btn new_btn'
+      = link_to "Sign up", new_user_registration_path, class: 'btn new_btn'
+  = yield
+
+%body
+%br
+.main
+  .side-content
+
+  .main-content
+    #calendar
+    %br
+    
+%footer
+  %p.footer
+    my first app 2019

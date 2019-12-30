@@ -45,19 +45,19 @@ $(function () {
         $(document).on('turbolinks:before-cache', clearCalendar);
 
         $('#calendar').fullCalendar({
-            events: '/events.json',
-            firstDay: 1,
-            
             eventSources : [
               {
                 googleCalendarApiKey: 'AIzaSyAwnwl90LWS95BB3OT-HKptuCALoEjWJAk',
-                
-                googleCalendarId: 'ja.japanese#holiday@group.v.calendar.google.com'
+                // url: 'https://www.google.com/calendar/feeds/japanese__ja%40holiday.calendar.google.com/public/basic',
+                googleCalendarId: 'shotaaa000@gmail.com',
+                rendering: 'background',
+                color:"#ffd0d0"
               }
             ],
-            
+            events: '/events.json',
+            firstDay: 1,
             eventClick: function(item, jsEvent, view) {
-              //クリックしたイベントのタイトルが取れるよ
+              //クリックしたイベントのタイトルが取れる
               alert('Clicked on: ' + item.title);
             },
 
@@ -70,7 +70,12 @@ $(function () {
               eventListButton:{
                   text: 'all events',
                   click:function(){
-                      alert('!');
+                    $.ajax({
+                      url: "/events",
+                      type: "get",
+                      dataType: "json",
+
+                    })
                   }
               }
             },

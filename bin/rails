@@ -7,3 +7,18 @@ end
 APP_PATH = File.expand_path('../config/application', __dir__)
 require_relative '../config/boot'
 require 'rails/commands'
+
+
+require "google_holiday_calendar"
+
+japan_calendar = GoogleHolidayCalendar::Calendar.new(country: "japanese", lang: "ja", api_key: "XXXXXXXXXXXXXXXXXXX")
+
+# holidaysで任意の期間の祝日を取得
+japan_calendar.holidays(start_date: "2017-01-01", end_date: "2017-03-01", limit: 5)
+#=> {Sun, 01 Jan 2017=>"元日", Mon, 02 Jan 2017=>"元日 振替休日", Mon, 09 Jan 2017=>"成人の日", Sat, 11 Feb 2017=>"建国記念の日"}
+
+# holiday?で祝日かどうか判定
+japan_calendar.holiday?("2017-01-01")
+#=> true
+japan_calendar.holiday?("2017-02-01")
+#=> false

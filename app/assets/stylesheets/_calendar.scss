@@ -1,0 +1,151 @@
+// Place all the styles related to the calendar controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dcdcdc;
+  color: #333;
+  // margin: 70px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  height: 100%;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwKXjhyH4RPcMgA_CVu0IsgUImzU7X9voT10sjXJAwU0dHPDLl");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color:rgba(255,255,255,0.3);
+  background-blend-mode:lighten;
+}
+#calendar{
+  margin: 0 18px 90px 18x;
+}
+.fc{
+  background-color: white;
+}
+h2{
+  padding: 10px;
+  font-size: 24px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+td{
+  text-decoration: none;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding: 0 5px 7px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+}
+
+.fc-sun {
+  color: red;
+  background-color: #fff0f0;
+}
+
+.fc-sat {
+  color: blue;
+  background-color: #f0f0ff;
+}
+.fc-content{
+  background-color: #ffffff	;
+  color: black;
+}
+
+.fc-left,.fc-right{
+  margin: 10px 10px;
+}
+h2{
+  font-size: 32px;
+}
+.main-content{
+  height: 100%;
+  width: calc(100% - 200px);
+  
+}
+.side-content{
+  height: 915px;
+  width: 200px;
+}
+.main{
+  display: flex;
+  height: 100%;
+  margin-right: 10px;
+}
+.all-header{
+  height: 100px;
+  width: 100%;;
+  margin-right: 10px;
+}

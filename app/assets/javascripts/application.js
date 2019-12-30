@@ -14,3 +14,84 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require moment
+//= require fullcalendar
+
+
+
+
+
+
+
+
+
+$(function () {
+  // 画面遷移を検知
+  $(document).on('turbolinks:load', function () {
+    // lengthを呼び出すことで、#calendarが存在していた場合はtrueの処理がされ、無い場合はnillを返す
+    if ($('#calendar').length) {
+        function eventCalendar() {
+            return $('#calendar').fullCalendar({
+            });
+        };
+        function clearCalendar() {
+            $('#calendar').html('');
+        };
+
+        $(document).on('turbolinks:load', function () {
+            eventCalendar();
+        });
+        $(document).on('turbolinks:before-cache', clearCalendar);
+
+        $('#calendar').fullCalendar({
+            eventSources : [
+              {
+                googleCalendarApiKey: 'AIzaSyAwnwl90LWS95BB3OT-HKptuCALoEjWJAk',
+                // url: 'https://www.google.com/calendar/feeds/japanese__ja%40holiday.calendar.google.com/public/basic',
+                googleCalendarId: 'shotaaa000@gmail.com',
+                rendering: 'background',
+                color:"#ffd0d0"
+              }
+            ],
+            events: '/events.json',
+            firstDay: 1,
+            eventClick: function(item, jsEvent, view) {
+              //クリックしたイベントのタイトルが取れる
+              alert('Clicked on: ' + item.title);
+            },
+
+            header:{
+              left:'prev,next,today',
+              center:'title,eventListButton',
+              right:'month agendaWeek agendaDay'
+            },
+            customButtons:{
+              eventListButton:{
+                  text: 'all events',
+                  click:function(){
+                    $.ajax({
+                      url: "/events",
+                      type: "get",
+                      dataType: "json",
+
+                    })
+                  }
+              }
+            },
+            eventDrop: function(item, delta,revertFunc,jsEvent,ui, view) {
+              //ドロップした情報
+              alert('Clicked on: ' + item.title);
+              //ドロップしたことを元に戻したいとき
+              revertFunc();
+            }
+
+
+
+        });
+      
+    }
+  });
+})
+
+

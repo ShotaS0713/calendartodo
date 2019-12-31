@@ -16,3 +16,5 @@
 = link_to 'Edit', edit_event_path(@event)
 \|
 = link_to 'Back', root_path
+\|
+= link_to 'Destroy', @event, method: :delete, data: { confirm: 'この項目は削除されます' }

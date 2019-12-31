@@ -66,19 +66,17 @@ $(function () {
               center:'title,eventListButton',
               right:'month agendaWeek agendaDay'
             },
+            
+            
             customButtons:{
               eventListButton:{
                   text: 'all events',
                   click:function(){
-                    $.ajax({
-                      url: "/events",
-                      type: "get",
-                      dataType: "json",
-
-                    })
+                    window.location.href = '/events';
                   }
               }
-            },
+          },
+            
             eventDrop: function(item, delta,revertFunc,jsEvent,ui, view) {
               //ドロップした情報
               alert('Clicked on: ' + item.title);

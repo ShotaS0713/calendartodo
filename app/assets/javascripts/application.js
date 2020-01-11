@@ -9,16 +9,14 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require jquery
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require jquery
 //= require moment
 //= require fullcalendar
-
-
+//= require fullcalendar/gcal
 
 
 
@@ -48,8 +46,7 @@ $(function () {
             eventSources : [
               {
                 googleCalendarApiKey: 'AIzaSyAwnwl90LWS95BB3OT-HKptuCALoEjWJAk',
-                // url: 'https://www.google.com/calendar/feeds/japanese__ja%40holiday.calendar.google.com/public/basic',
-                googleCalendarId: 'shotaaa000@gmail.com',
+                googleCalendarId: 'japanese__ja@holiday.calendar.google.com',
                 rendering: 'background',
                 color:"#ffd0d0"
               }
@@ -66,19 +63,18 @@ $(function () {
               center:'title,eventListButton',
               right:'month agendaWeek agendaDay'
             },
+            
+            
+            
             customButtons:{
               eventListButton:{
                   text: 'all events',
                   click:function(){
-                    $.ajax({
-                      url: "/events",
-                      type: "get",
-                      dataType: "json",
-
-                    })
+                    window.location.href = '/events';
                   }
               }
-            },
+          },
+            
             eventDrop: function(item, delta,revertFunc,jsEvent,ui, view) {
               //ドロップした情報
               alert('Clicked on: ' + item.title);

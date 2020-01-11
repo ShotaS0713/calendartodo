@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: calendartodo_production
-  username: calendartodo
-  password: <%= ENV['CALENDARTODO_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock

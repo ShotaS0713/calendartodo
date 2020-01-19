@@ -84,6 +84,6 @@ gem 'erb2haml'
 gem 'google_holiday_calendar'
 gem 'devise'
 gem 'bootstrap-sass'
-# gem 'fog-aws'
+
 gem 'carrierwave'
 gem 'mini_magick'

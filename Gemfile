@@ -88,3 +88,4 @@ gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "excon", ">= 0.71.0"
+gem 'fog-aws'

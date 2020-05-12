@@ -47,6 +47,7 @@ $(function () {
               {
                 googleCalendarApiKey: 'AIzaSyAwnwl90LWS95BB3OT-HKptuCALoEjWJAk',
                 googleCalendarId: 'japanese__ja@holiday.calendar.google.com',
+                // googleCalendarId: 'usa__ja@holiday.calendar.google.com',
                 rendering: 'background',
                 color:"#ffd0d0"
               }

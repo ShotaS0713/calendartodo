@@ -6,15 +6,14 @@
 
  
 ## Features
- 
-sliderを使ったり、cssで画像やボタンをhoverした時などの変化を付け加えたりした。
+
+イベントを追加し、予定を入れることができます
  
 ## Requirement
-slick sliderや
+
  
 ## Installation
- 
-Requirementで列挙したライブラリなどのインストール方法を説明する
+
  
 ```bash
 pip install huga_package

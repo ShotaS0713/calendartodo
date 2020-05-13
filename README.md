@@ -7,7 +7,7 @@
  
 ## Features
 
-イベントを追加し、予定を入れることができます
+イベントを追加し、予定を入れることができます。
  
 
  
@@ -16,6 +16,8 @@
  
 ```bash
 git clone https://github.com/shimish000/calendartodo.git
+
+cd /calendartodo
 ```
  
 ## Usage

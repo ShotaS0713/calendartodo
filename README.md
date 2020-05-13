@@ -9,18 +9,17 @@
 
 イベントを追加し、予定を入れることができます
  
-## Requirement
 
  
 ## Installation
 
  
 ```bash
-pip install huga_package
+git clone https://github.com/shimish000/calendartodo.git
 ```
  
 ## Usage
-
+ログインしていただくと予定が追加できる仕組みとなっております。右上のボタンからログイン後、ボタンがnew eventに変わるので、そこからイベントを追加してください。
  
 ## Author
  
